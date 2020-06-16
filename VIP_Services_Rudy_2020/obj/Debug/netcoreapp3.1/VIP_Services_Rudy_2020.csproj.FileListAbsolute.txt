@@ -38,3 +38,16 @@ C:\Users\kevin\source\repos\VIP_Services_Rudy_2020\VIP_Services_Rudy_2020\bin\De
 C:\Users\kevin\source\repos\VIP_Services_Rudy_2020\VIP_Services_Rudy_2020\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\kevin\source\repos\VIP_Services_Rudy_2020\VIP_Services_Rudy_2020\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\kevin\source\repos\VIP_Services_Rudy_2020\VIP_Services_Rudy_2020\obj\Debug\netcoreapp3.1\VIP_Services_Rudy_2020.csproj.CoreCompileInputs.cache
+C:\Users\kevin\source\repos\VIP_Services_Rudy_2020\VIP_Services_Rudy_2020\bin\Debug\netcoreapp3.1\VIP_Services_Rudy_2020.deps.json
+C:\Users\kevin\source\repos\VIP_Services_Rudy_2020\VIP_Services_Rudy_2020\bin\Debug\netcoreapp3.1\VIP_Services_Rudy_2020.runtimeconfig.json
+C:\Users\kevin\source\repos\VIP_Services_Rudy_2020\VIP_Services_Rudy_2020\bin\Debug\netcoreapp3.1\VIP_Services_Rudy_2020.runtimeconfig.dev.json
+C:\Users\kevin\source\repos\VIP_Services_Rudy_2020\VIP_Services_Rudy_2020\bin\Debug\netcoreapp3.1\VIP_Services_Rudy_2020.dll
+C:\Users\kevin\source\repos\VIP_Services_Rudy_2020\VIP_Services_Rudy_2020\bin\Debug\netcoreapp3.1\VIP_Services_Rudy_2020.pdb
+C:\Users\kevin\source\repos\VIP_Services_Rudy_2020\VIP_Services_Rudy_2020\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\kevin\source\repos\VIP_Services_Rudy_2020\VIP_Services_Rudy_2020\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\kevin\source\repos\VIP_Services_Rudy_2020\VIP_Services_Rudy_2020\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\kevin\source\repos\VIP_Services_Rudy_2020\VIP_Services_Rudy_2020\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\kevin\source\repos\VIP_Services_Rudy_2020\VIP_Services_Rudy_2020\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\kevin\source\repos\VIP_Services_Rudy_2020\VIP_Services_Rudy_2020\obj\Debug\netcoreapp3.1\VIP_Services_Rudy_2020.dll
+C:\Users\kevin\source\repos\VIP_Services_Rudy_2020\VIP_Services_Rudy_2020\obj\Debug\netcoreapp3.1\VIP_Services_Rudy_2020.pdb
+C:\Users\kevin\source\repos\VIP_Services_Rudy_2020\VIP_Services_Rudy_2020\obj\Debug\netcoreapp3.1\VIP_Services_Rudy_2020.genruntimeconfig.cache
