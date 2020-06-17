@@ -1,0 +1,75 @@
+﻿<Page x:Class="MVVM2.Views.StartPaginaView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MVVM2.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="StartPaginaView"
+      Loaded="Page_Loaded"
+      Background="White">
+
+    <Grid>
+        <ListBox  x:Name="listboxMaand" HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="277" Loaded="ListBox_Loaded" ItemsSource="{Binding LijstReserveringen,Mode=OneWay}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding toString}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Content="maak niewe reservering aan" HorizontalAlignment="Left" Margin="627,415,0,0" VerticalAlignment="Top" Height="25" Width="163" Click="Button_Click"/>
+        <TextBox x:Name="Uur" HorizontalAlignment="Left" Margin="585,274,0,0" Text="hh" TextWrapping="Wrap" VerticalAlignment="Top" Width="23" />
+        <DatePicker x:Name="DatumSelect" HorizontalAlignment="Left" Margin="440,271,0,0" VerticalAlignment="Top" SelectedDateChanged="DatumSelect_SelectedDateChanged" SelectedDate="{Binding DatumReservatie,Mode=TwoWay}"/>
+        <Label Content="StartDatum:" HorizontalAlignment="Left" Margin="360,270,0,0" VerticalAlignment="Top"/>
+        <Label Content="uur:" HorizontalAlignment="Left" Margin="550,269,0,0" VerticalAlignment="Top"/>
+        <Label Content="Aatnal uur gereserveert:" HorizontalAlignment="Left" Margin="360,295,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="AantalUur" HorizontalAlignment="Left" Margin="504,299,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" />
+        <Label Content="StartLocatie:" HorizontalAlignment="Left" Margin="360,321,0,0" VerticalAlignment="Top"/>
+        <ComboBox  x:Name="StartLocatieDropDown"  HorizontalAlignment="Left" Margin="440,323,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="StartLocatieDropDown_SelectionChanged" ItemsSource="{Binding LijstLocaties}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Naam}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Label Content="EindLocatie:" HorizontalAlignment="Left" Margin="360,347,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="EindLocatieDropDown" HorizontalAlignment="Left" Margin="440,350,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="EindLocatieDropDown_SelectionChanged" ItemsSource="{Binding LijstLocaties}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Naam}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Label Content="Limousine:" HorizontalAlignment="Left" Margin="360,373,0,0" VerticalAlignment="Top"/>
+        <ComboBox  x:Name="LimousineDropDown" HorizontalAlignment="Left" Margin="440,377,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="LimousineDropDown_SelectionChanged" ItemsSource="{Binding LijstLimousine}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Naam}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Label Content="Klant:" HorizontalAlignment="Left" Margin="361,399,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="KlantDropDown"  HorizontalAlignment="Left" Margin="440,403,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="KlantDropDown_SelectionChanged" ItemsSource="{Binding LijstKlanten}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Naam}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Label Content="ReservatiType:" HorizontalAlignment="Left" Margin="585,323,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="ReservatiType" HorizontalAlignment="Left" Margin="670,325,0,0" VerticalAlignment="Top" Width="120" Loaded="ReservatiType_Loaded" SelectionChanged="ReservatiType_SelectionChanged"/>
+        
+
+    </Grid>
+</Page>
