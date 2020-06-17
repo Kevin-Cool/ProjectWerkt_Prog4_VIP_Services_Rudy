@@ -81,6 +81,7 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         <DatePicker HorizontalAlignment="Left" Margin="460,68,0,0" VerticalAlignment="Top" SelectedDate="{Binding DatumReservatieZoeken,Mode=TwoWay}"/>
+        <Button Content="Alle Reserveringen terug tonen" HorizontalAlignment="Left" Margin="361,107,0,0" VerticalAlignment="Top" Height="22" Width="174" Click="ShowAll" />
 
 
     </Grid>

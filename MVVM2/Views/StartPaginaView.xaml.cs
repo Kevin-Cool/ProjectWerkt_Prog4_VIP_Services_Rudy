@@ -109,5 +109,10 @@ namespace MVVM2.Views
         {
             ViewModel.PasLijstReserveringenAanOpDatum();
         }
+
+        private void ShowAll(object sender, RoutedEventArgs e)
+        {
+            ViewModel.GetAll();
+        }
     }
 }
