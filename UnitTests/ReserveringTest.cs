@@ -13,6 +13,7 @@ namespace UnitTests
     {
         private DomainController DC;
         private Reservering testReservering = new Reservering(5, DateTime.Now, new Locatie("Gent"), new Locatie("Gent"), new Limousine("Giga Limo 9000", 69, 69, 69, 69), new Klant("klantNaam", KlantTypes.vip, "somewhere", ""), ReserveringType.Business);
+        
         [TestInitialize]
         public void SetUp()
         {
@@ -81,6 +82,15 @@ namespace UnitTests
         {
             DC.Add(testReservering);
             Reservering tempRes = new Reservering(8, new DateTime(2020, 1, 22, 2, 0, 0), new Locatie("Gent"), new Locatie("Gent"), new Limousine("Giga Limo 9000", 69, 69, 69, 69), new Klant("klantNaam", KlantTypes.vip, "somewhere", ""), ReserveringType.Wedding);
+
+            Action act = () => DC.Add(tempRes);
+
+            act.Should().Throw<ArgumentException>();
+        }
+        [TestMethod]
+        public void Reservering_AddReserveringMetFouteLimousine_ThrowsException()
+        {
+            Reservering tempRes = new Reservering(8, new DateTime(2020, 1, 10, 2, 0, 0), new Locatie("Gent"), new Locatie("Gent"), new Limousine("Giga Limo 9000", 69, 69, -9, 69), new Klant("klantNaam", KlantTypes.vip, "somewhere", ""), ReserveringType.Wedding);
 
             Action act = () => DC.Add(tempRes);
 

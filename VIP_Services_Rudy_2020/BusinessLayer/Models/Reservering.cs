@@ -150,6 +150,7 @@ namespace VIP_Services_Rudy_2020.BusinessLayer.Models
                     }
                 }
             }
+            Cost = ((int)Math.Round(Cost / 5.0)) * 5;
             return (int)Cost;
         }
         public override string ToString()

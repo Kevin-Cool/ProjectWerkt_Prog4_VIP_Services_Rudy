@@ -76,6 +76,18 @@ namespace VIP_Services_Rudy_2020.BusinessLayer
                         throw new ArgumentException("Er moet minstens 6 uur tussen het hergebruik van eenzelfde limousine zijn.");
                         }
                     _reserRepo.Add(Reservering);
+                    if( (Reservering.Limousine.Nightlife.Equals(0))&&(Reservering.ReservatieType == ReserveringType.NightLife))
+                    {
+                        throw new ArgumentException("Deze Limousine mag niet gebruikt worden voor NightLife reserveringen");
+                    }
+                    if ((Reservering.Limousine.Wellness.Equals(0)) && (Reservering.ReservatieType == ReserveringType.Wellness))
+                    {
+                        throw new ArgumentException("Deze Limousine mag niet gebruikt worden voor Wellness reserveringen");
+                    }
+                    if ((Reservering.Limousine.Wedding.Equals(0)) && (Reservering.ReservatieType == ReserveringType.Wedding))
+                    {
+                        throw new ArgumentException("Deze Limousine mag niet gebruikt worden voor Wedding reserveringen");
+                    }
                     break; 
                 default:
                     break;
@@ -159,7 +171,10 @@ namespace VIP_Services_Rudy_2020.BusinessLayer
             {
                 if (staff.Aantal < aantalReservereingen)
                 {
-                    ReturnDictionary["Korting"] = staff.Korting;
+                    if(ReturnDictionary["Korting"] < staff.Korting)
+                    {
+                        ReturnDictionary["Korting"] = staff.Korting;
+                    }
                 }
             }
             //berkenen prijs
@@ -169,7 +184,7 @@ namespace VIP_Services_Rudy_2020.BusinessLayer
             double tempBTW = ((ReturnDictionary["eenheidsprijs"] / 100) * 6);
             ReturnDictionary.Add("BTWBedrag", (Math.Round(tempBTW, 2)));
             //toevoegen van de btw
-            ReturnDictionary.Add("TotaalInclusiefBTW", (Math.Round((ReturnDictionary["eenheidsprijs"] + ReturnDictionary["BTWBedrag"])));
+            ReturnDictionary.Add("TotaalInclusiefBTW", (Math.Round((ReturnDictionary["eenheidsprijs"] + ReturnDictionary["BTWBedrag"]))));
             return ReturnDictionary;
         }
     }
