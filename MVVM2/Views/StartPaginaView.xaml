@@ -69,7 +69,19 @@
         </ComboBox>
         <Label Content="ReservatiType:" HorizontalAlignment="Left" Margin="585,323,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="ReservatiType" HorizontalAlignment="Left" Margin="670,325,0,0" VerticalAlignment="Top" Width="120" Loaded="ReservatiType_Loaded" SelectionChanged="ReservatiType_SelectionChanged"/>
-        
+        <Button Content="Geef Reserveringen van :" HorizontalAlignment="Left" Margin="308,35,0,0" VerticalAlignment="Top" Click="GeefReserveringenKlant"/>
+        <Button Content="Geef Reserveringen op:" HorizontalAlignment="Left" Margin="308,70,0,0" VerticalAlignment="Top" Width="134" Click="GeefReserveringenDatum"/>
+        <ComboBox x:Name="KlantSelect" HorizontalAlignment="Left" Margin="460,34,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="KlantSelectDropDown_SelectionChanged" ItemsSource="{Binding LijstKlanten}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Naam}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <DatePicker HorizontalAlignment="Left" Margin="460,68,0,0" VerticalAlignment="Top" SelectedDate="{Binding DatumReservatieZoeken,Mode=TwoWay}"/>
+
 
     </Grid>
 </Page>

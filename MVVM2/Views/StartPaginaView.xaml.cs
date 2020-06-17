@@ -46,7 +46,10 @@ namespace MVVM2.Views
         {
             ViewModel.SelectedKlant = KlantDropDown.SelectedItem as Klant;
         }
-
+        private void KlantSelectDropDown_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ViewModel.SelectedKlantZoeken = KlantSelect.SelectedItem as Klant;
+        }
         private void LimousineDropDown_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ViewModel.SelectedLimousine = LimousineDropDown.SelectedItem as Limousine;
@@ -95,6 +98,16 @@ namespace MVVM2.Views
         private void ListBox_Loaded(object sender, RoutedEventArgs e)
         {
            //nothing
+        }
+
+        private void GeefReserveringenKlant(object sender, RoutedEventArgs e)
+        {
+            ViewModel.PasLijstReserveringenAanOpKlant();
+        }
+
+        private void GeefReserveringenDatum(object sender, RoutedEventArgs e)
+        {
+            ViewModel.PasLijstReserveringenAanOpDatum();
         }
     }
 }

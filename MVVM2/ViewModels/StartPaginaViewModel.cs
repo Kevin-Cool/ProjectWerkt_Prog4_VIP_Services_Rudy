@@ -23,6 +23,7 @@ namespace MVVM2.ViewModels
         public DomainController DC;
         public List<Klant> LijstKlanten { get; set; }
         public Klant SelectedKlant { get; set; }
+        public Klant SelectedKlantZoeken { get; set; }
         public List<Limousine> LijstLimousine { get; set; }
         public Limousine SelectedLimousine { get; set; }
         public List<Locatie> LijstLocaties { get; set; }
@@ -30,6 +31,7 @@ namespace MVVM2.ViewModels
         public Locatie EindLocatie { get; set; }
         public int AantalUur { get; set; }
         public DateTime DatumReservatie { get; set; } = DateTime.Today;
+        public DateTime DatumReservatieZoeken { get; set; } = DateTime.Today;
         public ReserveringType ReserveringType { get; set; }
         public ObservableCollection<Reservering> LijstReserveringen { get; set; } = new ObservableCollection<Reservering>();
         public StartPaginaViewModel()
@@ -84,6 +86,39 @@ namespace MVVM2.ViewModels
                 MessageBox.Show(ex.Message.ToString());
             }
         }
-        
+        public void PasLijstReserveringenAanOpKlant()
+        {
+            List<Reservering> tempList = (List<Reservering>)DC.GetAll("Reservering");
+            tempList = tempList.OrderByDescending(x => x.StartDatum).ToList();
+            for (int i = 0; i < tempList.Count; i++)
+            {
+                tempList[i].CostInfo = DC.CalculateReserveringCost(tempList[i]);
+            }
+            LijstReserveringen.Clear();
+            foreach (var item in tempList)
+            {
+                if (item.Klant.Equals(SelectedKlantZoeken))
+                {
+                    LijstReserveringen.Add(item);
+                }
+            }
+        }
+        public void PasLijstReserveringenAanOpDatum()
+        {
+            List<Reservering> tempList = (List<Reservering>)DC.GetAll("Reservering");
+            tempList = tempList.OrderByDescending(x => x.StartDatum).ToList();
+            for (int i = 0; i < tempList.Count; i++)
+            {
+                tempList[i].CostInfo = DC.CalculateReserveringCost(tempList[i]);
+            }
+            LijstReserveringen.Clear();
+            foreach (var item in tempList)
+            {//(item.StartDatum.Equals(DatumReservatieZoeken))
+                if ((item.StartDatum.Year.Equals(DatumReservatieZoeken.Year)) && (item.StartDatum.Month.Equals(DatumReservatieZoeken.Month)) && (item.StartDatum.Day.Equals(DatumReservatieZoeken.Day)))
+                {
+                    LijstReserveringen.Add(item);
+                }
+            }
+        }
     }
 }
